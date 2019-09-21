@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+
+>
+    <TextView
+            android:textAlignment="textStart"
+            android:layout_weight="1"
+            android:id="@+id/textTimeDaily"
+            android:text="Вт, 3 авг"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+
+            android:layout_marginTop="7dp"
+            android:paddingLeft="10dp"
+            android:textColor="@android:color/white"
+
+    />
+    <ImageView
+            android:layout_weight="1"
+            android:id="@+id/imageItemDaily"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/six"
+            android:layout_marginLeft="5dp"
+    />
+    <TextView
+            android:textAlignment="textEnd"
+            android:layout_weight="1"
+            android:id="@+id/textItemWeatherDaily"
+            android:text="24/13"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="7dp"
+            android:paddingLeft="12dp"
+            android:textColor="@android:color/white"
+    />
+
+</LinearLayout>

@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/relativeLayout"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:fitsSystemWindows="true"
+
+>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                android:fillViewport="true"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+        >
+            <RelativeLayout
+                    android:id="@+id/headerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                <ProgressBar
+                        android:visibility="invisible"
+                        android:id="@+id/progressBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="120dp"
+                        android:indeterminateTint="@android:color/white"
+                />
+                <TextView
+                        android:visibility="invisible"
+                        android:id="@+id/areaCity2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Europe/Volgograd"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginLeft="25dp"
+
+                />
+                <ImageView
+                        android:id="@+id/imageWeather"
+                        android:layout_width="259dp"
+                        android:layout_height="124dp"
+                        android:src="@drawable/one"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="2dp"
+                        android:scaleType="fitCenter"
+                        android:layout_centerHorizontal="true"
+
+
+                />
+                <TextView
+                        android:id="@+id/tempCity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="30C"
+                        android:textSize="40sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:layout_marginLeft="20dp"
+
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/imageWeather"
+
+                />
+                <TextView
+                        android:id="@+id/weatherText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Облачно"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_below="@+id/tempCity"
+                        android:layout_centerHorizontal="true"
+
+                />
+                <TextView
+                        android:id="@+id/tempCityMax"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="24/20"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_below="@+id/weatherText"
+                        android:layout_centerHorizontal="true"
+
+                />
+                <View android:layout_width="match_parent"
+                      android:layout_height="2dp"
+                      android:background="#ECEFF1"
+                      android:layout_below="@+id/tempCityMax"
+                      android:layout_marginTop="5dp"
+                      android:layout_marginRight="7dp"
+                      android:layout_marginLeft="7dp"
+                      android:id="@+id/viewLine"
+
+                >
+                </View>
+                <androidx.recyclerview.widget.RecyclerView
+                        android:visibility="visible"
+                        android:id="@+id/recyclerView_Hours"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="7dp"
+                        android:layout_marginLeft="7dp"
+                        android:clipToPadding="false"
+                        android:layout_below="@+id/viewLine"
+                >
+
+                </androidx.recyclerview.widget.RecyclerView>
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="#ECEFF1"
+                        android:layout_below="@+id/recyclerView_Hours"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="7dp"
+                        android:layout_marginLeft="7dp"
+                        android:id="@+id/viewLine2"
+
+                >
+                </View>
+                <androidx.recyclerview.widget.RecyclerView
+                        android:visibility="visible"
+                        android:id="@+id/recyclerView_Daily"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="7dp"
+                        android:layout_marginLeft="7dp"
+                        android:clipToPadding="false"
+                        android:layout_below="@+id/viewLine2"
+                        android:scrollbars="none"
+                >
+                </androidx.recyclerview.widget.RecyclerView>
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="#ECEFF1"
+                        android:layout_below="@+id/recyclerView_Daily"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginRight="7dp"
+                        android:layout_marginLeft="7dp"
+                        android:id="@+id/viewLine3"
+
+                >
+                </View>
+                <TextView
+                        android:id="@+id/textComfort"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Комфорт"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:layout_below="@+id/viewLine3"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="7dp"
+                />
+                <TextView
+                        android:id="@+id/textHumidity"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="Влажность"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="7dp"
+                        android:textAlignment="center"
+                        android:layout_below="@+id/textComfort"
+
+                />
+                <com.white.progressview.CircleProgressView
+                        android:id="@+id/circleProgressBar"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:padding="0dp"
+                        android:progress="18"
+                        app:progressNormalSize="4dp"
+                        app:progressReachSize="4dp"
+                        app:progressStyle="Normal"
+                        app:radius="70dp"
+                        app:progressTextSize="30sp"
+                        app:progressTextColor="@android:color/white"
+                        app:progressNormalColor="#bdbdbd"
+                        app:progressReachColor="@android:color/white"
+                        android:layout_below="@+id/textHumidity"
+                        android:layout_marginLeft="7dp"
+                />
+
+                <TextView
+                        android:id="@+id/textFeelTemp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ощущение"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#bdbdbd"
+                        android:layout_marginTop="55dp"
+                        android:layout_marginLeft="55dp"
+                        android:textAlignment="textStart"
+                        android:layout_below="@+id/textComfort"
+                        android:layout_toRightOf="@+id/textHumidity"
+
+                />
+                <TextView
+                        android:id="@+id/textFeelTempValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="22%"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:layout_marginTop="55dp"
+                        android:layout_marginLeft="10dp"
+                        android:textAlignment="textStart"
+                        android:layout_below="@+id/textComfort"
+                        android:layout_toRightOf="@+id/textFeelTemp"
+
+                />
+                <TextView
+                        android:id="@+id/textUf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Индекс УФ"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#bdbdbd"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="55dp"
+                        android:textAlignment="textStart"
+                        android:layout_below="@+id/textFeelTemp"
+                        android:layout_toRightOf="@+id/textHumidity"
+
+                />
+                <TextView
+                        android:id="@+id/textUfValue"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="0 Низкий"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="10dp"
+                        android:textAlignment="textStart"
+                        android:layout_below="@+id/textFeelTempValue"
+                        android:layout_toRightOf="@+id/textUf"
+
+                />
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="#ECEFF1"
+                        android:layout_below="@+id/circleProgressBar"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginRight="7dp"
+                        android:layout_marginLeft="7dp"
+                        android:id="@+id/viewLine4"
+
+                >
+                </View>
+                <TextView
+                        android:id="@+id/textWind"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ветер"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:layout_below="@+id/viewLine4"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="7dp"
+                />
+                <ImageView
+                        android:id="@+id/imageWind"
+                        android:layout_width="134dp"
+                        android:layout_height="90dp"
+                        android:src="@drawable/wind2"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="26dp"
+                        android:scaleType="fitCenter"
+                        android:layout_below="@+id/textWind"
+                        android:layout_marginBottom="10dp"
+
+                />
+                <TextView
+                        android:id="@+id/textDirection"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Направление"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#bdbdbd"
+                        android:layout_marginTop="35dp"
+                        android:layout_marginLeft="55dp"
+                        android:textAlignment="textStart"
+                        android:layout_below="@+id/textWind"
+                        android:layout_toRightOf="@+id/imageWind"
+
+                />
+                <TextView
+                        android:id="@+id/textDirectionValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ю"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:layout_marginTop="35dp"
+                        android:layout_marginLeft="10dp"
+                        android:textAlignment="textStart"
+                        android:layout_below="@+id/textWind"
+                        android:layout_toRightOf="@+id/textDirection"
+
+                />
+                <TextView
+                        android:id="@+id/textSpeed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Скорость"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#bdbdbd"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="55dp"
+                        android:layout_marginBottom="10dp"
+                        android:textAlignment="textStart"
+                        android:layout_below="@+id/textDirection"
+                        android:layout_toRightOf="@+id/imageWind"
+
+                />
+                <TextView
+                        android:id="@+id/textSpeedValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12-28 km/h"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:textAlignment="textStart"
+                        android:layout_below="@+id/textDirectionValue"
+                        android:layout_toRightOf="@+id/textSpeed"
+
+                />
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
